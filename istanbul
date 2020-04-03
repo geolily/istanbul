@@ -1,31 +1,12 @@
 
 <html>
 <!-- code from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_image_compare -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-
-/* code from https://www.w3schools.com/howto/howto_css_images_side_by_side.asp */    
-* {
-    box-sizing: border-box;
-}
-
-.row {
-    display: none;
-}
-
-/* Create three equal columns that sits next to each other */
-.column {
-    flex: 50%;
-    padding: 1px;
-}
-        
 * {box-sizing: border-box;}
 
 .img-comp-container {
-  margin: auto;
-  position: absolute;
-  /* width: 40%; */
-  /* height: 100px; should be the same height as the images */
+  position: relative;
+  height: 200px; /*should be the same height as the images*/
 }
 
 .img-comp-img {
@@ -60,26 +41,16 @@
 </style>
 
 <body>
-<button onclick="myFunction()" id = "mybutton" >Side by Side</button>
 
-  <div class="img-comp-container" id="curtain">
-        <div class="img-comp-img">
-                <img src="GEE_Istanbul_89.jpeg" width="420" height="310">  
-              </div>
-              <div class="img-comp-img img-comp-overlay">
-                <img src="GEE_Istanbul_19.jpeg" width="420" height="310">
-              </div>
-            </div>
+  <div class="img-comp-container" >
+    <div class="img-comp-img">
+      <img src="GEE_Istanbul_19.jpeg" width="420" height="310">  
+    </div>
+    <div class="img-comp-img img-comp-overlay">
+      <img src="GEE_Istanbul_89.jpeg" width="420" height="310">
+    </div>
+  </div>
   
-
-  <div class="row" id="sidebyside">
-        <div class="column">
-          <img  src="GEE_Istanbul_89.jpeg" alt="1989" style="width:100%">
-        </div>
-        <div class="column">
-            <img  src="GEE_Istanbul_19.jpeg" alt="2019" style="width:100%">
-        </div>
-   </div>
 
 
 
@@ -164,20 +135,7 @@ function initComparisons() {
 </script>
 <script>
 initComparisons();
-function myFunction() {
-          var but = document.getElementById("mybutton")
-          var x = document.getElementById("curtain");
-          var y = document.getElementById("sidebyside");
-          if (x.style.display == "none") {
-            x.style.display = "block";
-            y.style.display = "none";
-            but.innerHTML = "Side by Side";
-          } else {
-            y.style.display = "flex";
-            x.style.display = "none";
-            but.innerHTML = "Curtain";
-          }
-        }
+
 
 </script>
 
