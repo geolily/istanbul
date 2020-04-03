@@ -2,6 +2,23 @@
 <html>
 <!-- code from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_image_compare -->
 <style>
+
+/* code from https://www.w3schools.com/howto/howto_css_images_side_by_side.asp */    
+* {
+    box-sizing: border-box;
+}
+
+.row {
+    display: none;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+    flex: 50%;
+    padding: 1px;
+}
+
+
 * {box-sizing: border-box;}
 
 .img-comp-container {
@@ -41,6 +58,15 @@
 </style>
 
 <body>
+
+  <div class="row" id="sidebyside">
+    <div class="column">
+      <img  src="images/Istanbul_1984.png" alt="1984" width="949.92" height="567.91">
+    </div>
+    <div class="column">
+        <img  src="images/Istanbul_2019.png" alt="2019" width="949.92" height="567.91">
+    </div>
+</div>
 
   <div class="img-comp-container" >
     <div class="img-comp-img">
@@ -134,10 +160,23 @@ function initComparisons() {
 }
 </script>
 <script>
-initComparisons();
-
-
-</script>
+  initComparisons();
+  function myFunction() {
+            var but = document.getElementById("mybutton")
+            var x = document.getElementById("curtain");
+            var y = document.getElementById("sidebyside");
+            if (x.style.display == "none") {
+              x.style.display = "block";
+              y.style.display = "none";
+              but.innerHTML = "Side by Side (all 5)";
+            } else {
+              y.style.display = "flex";
+              x.style.display = "none";
+              but.innerHTML = "Curtain (1984 and 2019)";
+            }
+          }
+  
+  </script>
 
 </body> 
 
